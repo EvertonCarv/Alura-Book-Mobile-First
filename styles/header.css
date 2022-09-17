@@ -37,7 +37,7 @@
         width: 42vw;
     }
 
-.container__botao:checked~.lista-menu 
+.container__botao:checked ~ .lista-menu 
     {
         display: block;
     }
@@ -133,6 +133,6 @@
         .opções__botão 
             {
                 display: none;
-            }              
-
+            } 
+        
     }
