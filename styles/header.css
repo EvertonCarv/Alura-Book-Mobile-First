@@ -9,12 +9,22 @@
         display: inline-block; /*permite ajuste de alrgura e altura*/                
     }
 
+.container__botao:checked ~ .container__rotulo > .cabeçalho__menu-hamburguer 
+    {
+        background-image: url("img/Menu_Aberto.svg");        
+    }
+
+.container__botao:checked ~ .container__rotulo 
+    {
+        background: var(--azul-degrade);
+    }
+
 .cabeçalho 
     {
         background-color: var(--branco);
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: center; 
         position: relative;
     }
 
@@ -26,7 +36,7 @@
 
 .container__imagem
     {
-        padding: 0;
+        padding-right: 0.5em;
     }
 
 .lista-menu
@@ -76,6 +86,11 @@
         display: none;
     }
 
+.container p
+    {
+        display: none;
+    }
+
 @media screen and (min-width: 1024px) /*Media Query utilizada para aplicar estilos em diferentes telas*/
     {
         .container__titulo, .container__titulo--negrito 
@@ -92,6 +107,12 @@
             {
                 font-weight: 700;
             }
+
+        .container__texto 
+            {
+                margin: 0 1em 0 0;
+            }
+
         .opções 
             {
                 display: flex;
@@ -133,6 +154,55 @@
         .opções__botão 
             {
                 display: none;
-            } 
+            }   
+
+        .opções__botão:checked~ .opções__rotulo> .opções__item 
+            {
+                background: var(--azul-degrade);
+                color: var(--branco);
+            }
+
+        .opções__item 
+            {
+                padding: 2em 1em;
+            }
+
+        .lista-menu__item:hover
+            {
+                background: var(--azul-degrade);
+            }
+
+        .lista-menu__item:hover > .lista-menu__link
+            {
+                -webkit-text-fill-color: var(--branco);
+                text-decoration: none;
+            }
         
+        
+    }
+
+@media screen and (min-width: 1728px) 
+    {
+        .container__link
+            {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: var(--preto)
+            }
+
+        .cabeçalho
+            {
+                padding: 0 2em;
+            }
+
+        .opções 
+            {
+                margin-right: auto;
+            }
+
+        .container p 
+            {
+                display: block;
+            }
     }
